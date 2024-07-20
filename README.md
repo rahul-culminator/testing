@@ -19,7 +19,7 @@ To connect to AWS, follow these steps in a new terminal:
 
 ### PostgreSQL Connection
 
-Establish the appropriate tunnel for the PostgreSQL database instance in the terminal.
+Establish the appropriate ssh tunnel for the PostgreSQL database instance in the terminal.
 
 ## Steps to Follow
 
