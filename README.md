@@ -2,7 +2,7 @@
 
 ## Script Overview
 
-`action.py` is a script that automates the process of building the action schema in a PostgreSQL database. The script performs the following tasks:
+`action.py` script automates the process of building the action schema in a PostgreSQL database. The script performs the following tasks:
 
 1. Running AWS Glue jobs.
 2. Creating tables, indices, and performing post-load operations in the PostgreSQL database.
