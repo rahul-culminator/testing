@@ -13,7 +13,7 @@
 
 To connect to AWS, follow these steps in a new terminal:
 
-1. Load the required configuration:
+1. Load the required configuration and use sandbox:
     ```bash
     export AWS_PROFILE=sandbox
     ```
