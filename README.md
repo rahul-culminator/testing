@@ -54,9 +54,9 @@ Ensure you have the necessary AWS and PostgreSQL configurations set up as descri
 Manually drop the existing action schema in the PostgreSQL database using the following command:
 ```sql
 DROP SCHEMA action CASCADE;
+```
 
-
-### Step 4: Run the Script
+### Step 3: Drop the Action Schema
 
 Run the `action.py` script:
 ```bash
