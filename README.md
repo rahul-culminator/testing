@@ -56,7 +56,7 @@ Manually drop the existing action schema in the PostgreSQL database using the fo
 DROP SCHEMA action CASCADE;
 ```
 
-### Step 3: Drop the Action Schema
+### Step 4: Run the Script
 
 Run the `action.py` script:
 ```bash
