@@ -36,7 +36,7 @@ Ensure you have the necessary AWS and PostgreSQL configurations set up as descri
 
 1. Clone the repository to your local machine:
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/CulminationGithub/postgresdb.git
     ```
 2. Navigate to the cloned repository in a new terminal.
 
