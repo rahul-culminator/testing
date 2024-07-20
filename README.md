@@ -15,8 +15,7 @@ To connect to AWS, follow these steps in a new terminal:
 
 1. Load the required configuration and use sandbox:
   
-2. Login to AWS SSO:
-
+2. Login to AWS SSO
 
 ### PostgreSQL Connection
 
