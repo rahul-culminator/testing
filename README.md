@@ -1,61 +1,133 @@
-# README
+# PostgreSQL Cheat Sheet
 
-## Script Overview
+## Connection
 
-`action.py` script automates the process of building the action schema in a PostgreSQL database. The script performs the following tasks:
+### Step 1: Connect to PostgreSQL using SSH Tunnel
+First, establish an SSH tunnel to connect to the PostgreSQL server.
 
-1. Running AWS Glue jobs.
-2. Creating tables, indices, and performing post-load operations in the PostgreSQL database.
+### Step 2: Connect to the Database
+After connecting to the SSH tunnel, use the following command to connect to the PostgreSQL database:
 
-## Prerequisites
-
-### AWS Authentication
-
-To connect to AWS, follow these steps in a new terminal:
-
-1. Load the required configuration and use sandbox:
-  
-2. Login to AWS SSO
-
-### PostgreSQL Connection
-
-Establish the appropriate ssh tunnel for the PostgreSQL database instance in the terminal.
-
-## Steps to Follow
-
-### Step 1: Setup the Environment
-
-Ensure you have the necessary AWS and PostgreSQL configurations set up as described above.
-
-### Step 2: Clone the Repository
-
-1. Clone the repository to your local machine:
-    ```bash
-    git clone https://github.com/CulminationGithub/postgresdb.git
-    ```
-2. Navigate to the cloned repository in a new terminal.
-
-3. Update the `config_sandbox.yaml` file with the appropriate port number used in the tunnel. For example, if the tunnel command is:
-    ```bash
-    ssh -L5434:10.**.17.**:5432 jupyter_dev
-    ```
-    Then set the port in `config_sandbox.yaml` to `5434`:
-    ```yaml
-    port: 5434
-    ```
-
-### Step 3: Drop the Action Schema
-
-Manually drop the existing action schema in the PostgreSQL database using the following command:
-```sql
-DROP SCHEMA action CASCADE;
+```sh
+psql --host=hostname -U username -d database
 ```
 
-### Step 4: Run the Script
+## Database Operations
 
-Run the `action.py` script:
-```bash
-python3 action.py
+### Connect to a Database
+```sh
+\c database_name
 ```
 
-This will automate the process of running the Glue jobs and setting up the action schema in the PostgreSQL database.
+### List Tables, Views, and Sequences
+```sh
+\d
+```
+
+### List Tables Only
+```sh
+\dt
+```
+
+
+### List Views Only
+```sh
+\dv
+```
+
+
+### List Sequences Only
+```sh
+\ds
+```
+
+### Describe a Table: Show columns and their data types for a specific table.
+```sh
+\d table_name
+```
+
+### List Schemas
+```sh
+\dn
+```
+
+### List Indexes
+```sh
+\di
+```
+
+### List Functions
+```sh
+\df
+```
+
+### List Data Types
+```sh
+\dT
+```
+
+## User and Permission Management
+
+### List Roles (Users)
+```sh
+\du
+```
+
+### List Databases
+```sh
+\l
+```
+
+### Quit psql
+```sh
+\q
+```
+
+### Display Command History
+```sh
+\s
+```
+
+### Show Active Connections
+```sh
+\conninfo
+```
+
+
+## Query Execution
+### Run a Query
+```sh
+SELECT * FROM table_name;
+```
+
+
+## Backup and Restore
+### Backup a Database
+```sh
+pg_dump database_name > backup_file.sql
+```
+
+### Restore a Database
+```sh
+psql database_name < backup_file.sql
+```
+
+
+
+## Schema Management
+
+### Set the Search Path to a Specific Schema
+```sh
+SET search_path TO schema_name;
+```
+
+### Verify the Current Search Path
+```sh
+SHOW search_path;
+```
+
+## Script Execution
+### Execute a Script File
+```sh
+\i filename.sql
+```
